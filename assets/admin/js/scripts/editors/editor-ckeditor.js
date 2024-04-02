@@ -62,7 +62,7 @@
 
 	CKEDITOR.replace( 'ckeditor-language', {
 		extraPlugins: 'language',
-		// Customizing list of languages available in the Language drop-down.
+		// Customizing list of Languages available in the Language drop-down.
 		language_list: [ 'ar:Arabic:rtl', 'fr:French',  'he:Hebrew:rtl', 'es:Spanish' ],
 		height: 350
 	} );

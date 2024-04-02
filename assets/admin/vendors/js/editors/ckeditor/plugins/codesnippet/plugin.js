@@ -228,21 +228,21 @@
 		 */
 
 		/**
-		 * Defines languages supported by the highlighter.
+		 * Defines Languages supported by the highlighter.
 		 * They can be restricted with the {@link CKEDITOR.config#codeSnippet_languages} configuration option.
 		 *
 		 * **Note**: If {@link CKEDITOR.config#codeSnippet_languages} is set, **it will
-		 * overwrite** the languages listed in `languages`.
+		 * overwrite** the Languages listed in `Languages`.
 		 *
-		 *		languages: {
+		 *		Languages: {
 		 *			coffeescript: 'CoffeeScript',
 		 *			cpp: 'C++',
 		 *			cs: 'C#',
 		 *			css: 'CSS'
 		 *		}
 		 *
-		 * More information on how to change the list of languages is available
-		 * in the [Code Snippet documentation](#!/guide/dev_codesnippet-section-changing-languages-list).
+		 * More information on how to change the list of Languages is available
+		 * in the [Code Snippet documentation](#!/guide/dev_codesnippet-section-changing-Languages-list).
 		 *
 		 * @property {Object} languages
 		 */
@@ -440,16 +440,16 @@
 CKEDITOR.config.codeSnippet_codeClass = 'hljs';
 
 /**
- * Restricts languages available in the "Code Snippet" dialog window.
+ * Restricts Languages available in the "Code Snippet" dialog window.
  * An empty value is always added to the list.
  *
  * **Note**: If using a custom highlighter library (the default is [highlight.js](http://highlightjs.org)),
  * you may need to refer to external documentation to set `config.codeSnippet_languages` properly.
  *
- * Read more in the [documentation](#!/guide/dev_codesnippet-section-changing-supported-languages)
+ * Read more in the [documentation](#!/guide/dev_codesnippet-section-changing-supported-Languages)
  * and see the [SDK sample](http://sdk.ckeditor.com/samples/codesnippet.html).
  *
- *		// Restricts languages to JavaScript and PHP.
+ *		// Restricts Languages to JavaScript and PHP.
  *		config.codeSnippet_languages = {
  *			javascript: 'JavaScript',
  *			php: 'PHP'

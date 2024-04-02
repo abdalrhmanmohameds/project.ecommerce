@@ -17,7 +17,7 @@ snippet docs\n\
 snippet wh\n\
 	while ${1:condition}:\n\
 		${2:# TODO: write code...}\n\
-# dowh - does the same as do...while in other languages\n\
+# dowh - does the same as do...while in other Languages\n\
 snippet dowh\n\
 	while True:\n\
 		${1:# TODO: write code...}\n\

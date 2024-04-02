@@ -625,7 +625,7 @@ $(document).ready(function(){
 	****************************************/
 	var initialLangCode = 'en';
 
-	$('#fc-languages').fullCalendar({
+	$('#fc-Languages').fullCalendar({
 		header: {
 			left: 'prev,next today',
 			center: 'title',
@@ -710,7 +710,7 @@ $(document).ready(function(){
     // when the selected option changes, dynamically change the calendar option
     $('#lang-selector').on('change', function() {
       if (this.value) {
-        $('#fc-languages').fullCalendar('option', 'locale', this.value);
+        $('#fc-Languages').fullCalendar('option', 'locale', this.value);
       }
     });
 

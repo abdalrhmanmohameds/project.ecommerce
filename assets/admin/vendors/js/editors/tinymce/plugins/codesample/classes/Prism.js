@@ -93,7 +93,7 @@ var _ = _self.Prism = {
 		 * @param inside The key (or language id) of the parent
 		 * @param before The key to insert before. If not provided, the function appends instead.
 		 * @param insert Object with the key/value pairs to insert
-		 * @param root The object that contains `inside`. If equal to Prism.languages, it can be omitted.
+		 * @param root The object that contains `inside`. If equal to Prism.Languages, it can be omitted.
 		 */
 		insertBefore: function (inside, before, insert, root) {
 			root = root || _.languages;

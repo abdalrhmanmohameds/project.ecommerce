@@ -193,7 +193,7 @@
       });
     });
 
-    // Multiple languages
+    // Multiple Languages
     $(".select2-language").select2({
       language: "es"
     });

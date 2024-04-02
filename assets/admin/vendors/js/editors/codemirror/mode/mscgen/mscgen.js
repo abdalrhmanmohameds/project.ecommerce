@@ -5,7 +5,7 @@
 // For more information on mscgen, see the site of the original author:
 // http://www.mcternan.me.uk/mscgen
 //
-// This mode for mscgen and the two derivative languages were
+// This mode for mscgen and the two derivative Languages were
 // originally made for use in the mscgen_js interpreter
 // (https://sverweij.github.io/mscgen_js)
 

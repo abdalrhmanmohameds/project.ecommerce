@@ -82,7 +82,7 @@
 
 			target[fragments[fragments.length - 1]] = modules[id];
 		}
-		
+
 		// Expose private modules for unit tests
 		if (exports.AMDLC_TESTS) {
 			privateModules = exports.privateModules || {};
@@ -9664,7 +9664,7 @@ define("tinymce/AddOnManager", [
 		 *
 		 * @method requireLangPack
 		 * @param {String} name Short name of the add-on.
-		 * @param {String} languages Optional comma or space separated list of languages to check if it matches the name.
+		 * @param {String} languages Optional comma or space separated list of Languages to check if it matches the name.
 		 */
 		requireLangPack: function(name, languages) {
 			var language = AddOnManager.language;
@@ -27458,7 +27458,7 @@ define("tinymce/ui/Control", [
 
 		/**
 		 * Encodes the specified string with HTML entities. It will also
-		 * translate the string to different languages.
+		 * translate the string to different Languages.
 		 *
 		 * @method encode
 		 * @param {String/Object/Array} text Text to entity encode.

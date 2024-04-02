@@ -106,7 +106,7 @@
         return CodeMirror.Pass;
       // Kludge to get around the fact that we are not in XML mode
       // when completing in JS/CSS snippet in htmlmixed mode. Does not
-      // work for other XML embedded languages (there is no general
+      // work for other XML embedded Languages (there is no general
       // way to go from a mixed mode to its current XML state).
       var replacement;
       if (inner.mode.name != "xml") {
