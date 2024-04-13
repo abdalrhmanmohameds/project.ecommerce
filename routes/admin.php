@@ -53,15 +53,15 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin'], function ()
 
     ########################## Begin vendors  Route ##################
 
-    Route::group(['prefix' => 'Main_Categories'], function () {
-        Route::get('/', 'MainCategoriesController@index')->name('admin.maincategories');
-        Route::get('create', 'MainCategoriesController@create')->name('admin.maincategories.create');
-        Route::post('store', 'MainCategoriesController@store')->name('admin.maincategories.store');
+    Route::group(['prefix' => 'Vendors'], function () {
+        Route::get('/', 'vendorsController@index')->name('admin.Vendors');
+        Route::get('create', 'vendorsController@create')->name('admin.Vendors.create');
+        Route::post('store', 'vendorsController@store')->name('admin.Vendors.store');
 
-        Route::get('edit/{id}', 'MainCategoriesController@edit')->name('admin.maincategories.edit');
-        Route::post('update/{id}', 'MainCategoriesController@update')->name('admin.maincategories.update');
+        Route::get('edit/{id}', 'vendorsController@edit')->name('admin.Vendors.edit');
+        Route::post('update/{id}', 'vendorsController@update')->name('admin.Vendors.update');
 
-        Route::get('destroy/{id}', 'MainCategoriesController@destroy')->name('admin.maincategories.delete');
+        Route::get('destroy/{id}', 'vendorsController@destroy')->name('admin.Vendors.delete');
     });
 
     ####################### End vendors Route ########################
