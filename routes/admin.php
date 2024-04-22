@@ -13,6 +13,7 @@ use App\Http\Controllers;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 define('PAGINATION_COUNT', 10);
 Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin'], function () {
     Route::get('/', 'DashboardController@index')->name('admin.dashboard');
@@ -71,7 +72,4 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'auth:admin'], function ()
 Route::group(['namespace' => 'Admin', 'middleware' => 'guest:admin'], function () {
     Route::get('login', 'LoginController@getLogin')->name('get.admin.login');
     Route::post('login', 'LoginController@login')->name('admin.login');
-
 });
-
-

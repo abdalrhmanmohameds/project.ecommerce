@@ -23,10 +23,10 @@ class LanguagesController extends Controller
     public function store(LanguagesRequest $request)
     {
         // insert to db
-//        return $request -> except('_token');
+        //        return $request -> except('_token');
         try {
-            if ($request -> has('active'));
-            $request -> request -> add(['active' => 0]);
+            if ($request->has('active'));
+            $request->request->add(['active' => 0]);
             Language::create($request->except('_token'));
             return redirect()->route('admin.languages')->with(['success' => 'تم حفظ اللغة بنجاح']);
         } catch (\Exception $ex) {
@@ -41,8 +41,6 @@ class LanguagesController extends Controller
             return redirect()->route('admin.languages')->with(['error' => 'هذة اللغة غير موجودة']);
         }
         return view('admin.Languages.edit', compact('language'));
-
-
     }
 
 
@@ -53,8 +51,8 @@ class LanguagesController extends Controller
             if (!$language) {
                 return redirect()->route('admin.languages.edit')->with(['error' => 'هذة اللغة غير موجودة']);
             }
-            if (!$request -> has('active'))
-                $request -> request -> add(['active' => 0]);
+            if (!$request->has('active'))
+                $request->request->add(['active' => 0]);
             $language->update($request->except('_token'));
             return redirect()->route('admin.languages')->with(['success' => 'تم حذف اللغة بنجاح']);
         } catch (\Exception $ex) {
@@ -70,7 +68,7 @@ class LanguagesController extends Controller
             if (!$language) {
                 return redirect()->route('admin.languages')->with(['error' => 'هذة اللغة غير موجودة']);
             }
-            $language -> delete();
+            $language->delete();
             return redirect()->route('admin.languages')->with(['success' => 'تم حذف اللغة بنجاح']);
         } catch (\Exception $ex) {
             return redirect()->route('admin.languages')->with(['error' => 'هناك خطا ما يرجي المحاولة فيما بعد']);

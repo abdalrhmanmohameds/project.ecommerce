@@ -11,7 +11,7 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="">الرئيسية </a>
                                 </li>
-                                <li class="breadcrumb-item"><a href="{{route('admin.Vendors')}}"> المتاجر </a>
+                                <li class="breadcrumb-item"><a href="{{ route('admin.Vendors') }}">المتاجر </a>
                                 </li>
                                 <li class="breadcrumb-item active">إضافة متجر
                                 </li>
@@ -28,8 +28,7 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h4 class="card-title" id="basic-layout-form"> إضافة متجر </h4>
-                                    <a class="heading-elements-toggle"><i
-                                            class="la la-ellipsis-v font-medium-3"></i></a>
+                                    <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
                                     <div class="heading-elements">
                                         <ul class="list-inline mb-0">
                                             <li><a data-action="collapse"><i class="ft-minus"></i></a></li>
@@ -43,18 +42,19 @@
                                 @include('admin.includes.alerts.errors')
                                 <div class="card-content collapse show">
                                     <div class="card-body">
-                                        <form class="form" action="{{route('admin.Vendors.store')}}"
-                                              method="POST"
-                                              enctype="multipart/form-data">
+                                        <form class="form" action="{{ route('admin.Vendors.store') }}" method="POST"
+                                            enctype="multipart/form-data">
+                                            <input type="hidden" value="" id="latitude" name="latitude">
+                                            <input type="hidden" value="" id="longitude" name="longitude">
                                             @csrf
                                             <div class="form-group">
-                                                <label> لوجو التاجر </label>
+                                                <label> لوجو التجار </label>
                                                 <label id="projectinput7" class="file center-block">
                                                     <input type="file" id="file" name="logo">
                                                     <span class="file-custom"></span>
                                                 </label>
                                                 @error('logo')
-                                                <span class="text-danger">{{$message}}</span>
+                                                    <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
 
@@ -62,16 +62,15 @@
 
                                                 <h4 class="form-section"><i class="ft-home"></i> بيانات المتجر </h4>
 
+
                                                 <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> الاسم</label>
+                                                            <label for="projectinput1"> الاسم </label>
                                                             <input type="text" value="" id="name"
-                                                                   class="form-control"
-                                                                   placeholder="  "
-                                                                   name="name">
-                                                            @error("name")
-                                                            <span class="text-danger">{{$message}}</span>
+                                                                class="form-control" placeholder="  " name="name">
+                                                            @error('name')
+                                                                <span class="text-danger">{{ $message }}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
@@ -81,106 +80,104 @@
                                                             <label for="projectinput2"> أختر القسم </label>
                                                             <select name="category_id" class="select2 form-control">
                                                                 <optgroup label="من فضلك أختر القسم ">
-                                                                    @if($categories && $categories -> count() > 0)
-                                                                        @foreach($categories as $category)
-                                                                            <option
-                                                                                value="{{$category -> id }}">{{$category -> name}}</option>
+                                                                    @if ($categories && $categories->count() > 0)
+                                                                        @foreach ($categories as $category)
+                                                                            <option value="{{ $category->id }}">
+                                                                                {{ $category->name }}</option>
                                                                         @endforeach
                                                                     @endif
                                                                 </optgroup>
                                                             </select>
                                                             @error('category_id')
-                                                            <span class="text-danger"> {{$message}}</span>
+                                                                <span class="text-danger"> {{ $message }}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
-
-
                                                 </div>
+
+
                                                 <div class="row">
                                                     <div class="col-md-6 ">
                                                         <div class="form-group">
-                                                            <label for="projectinput1">رقم الهاتف</label>
-                                                            <input type="text" id="mobile"
-                                                                   class="form-control"
-                                                                   placeholder="  "
-                                                                   name="mobile">
+                                                            <label for="projectinput1"> رقم الهاتف </label>
+                                                            <input type="text" id="mobile" class="form-control"
+                                                                placeholder="  " name="mobile">
 
-                                                            @error("mobile")
-                                                            <span class="text-danger">{{$message}}</span>
+                                                            @error('mobile')
+                                                                <span class="text-danger"> {{ $message }}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
                                                     <div class="col-md-6 ">
                                                         <div class="form-group">
-                                                            <label for="projectinput1"> البريد الالكتروني </label>
-                                                            <input type="text" id="email"
-                                                                   class="form-control"
-                                                                   placeholder="  "
-                                                                   name="email">
+                                                            <label for="projectinput1"> ألبريد الالكتروني </label>
+                                                            <input type="text" id="email" class="form-control"
+                                                                placeholder="  " name="email">
 
-                                                            @error("email")
-                                                            <span class="text-danger">{{$message}}</span>
+                                                            @error('email')
+                                                                <span class="text-danger"> {{ $message }}</span>
                                                             @enderror
                                                         </div>
                                                     </div>
 
 
-                                                    <div class="row">
-                                                        <div class="class col 12">
-                                                            <div class="form-group">
-                                                                <label for="projectinput1"> كلمة المرور </label>
-                                                                <input type="password" id="password"
-                                                                       class="form-control"
-                                                                       placeholder="  "
-                                                                       name="password">
+                                                </div>
 
-                                                                @error("password")
-                                                                <span class="text-danger">{{$message}}</span>
-                                                                @enderror
-                                                            </div>
+
+                                                <div class="row">
+                                                    <div class="class col-12">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1">كلمة المرور </label>
+                                                            <input type="password" id="password" class="form-control"
+                                                                placeholder="  " name="password">
+
+                                                            @error('password')
+                                                                <span class="text-danger"> {{ $message }}</span>
+                                                            @enderror
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+
+                                                <di class="row">
+                                                    <div class="col-md-6 ">
+                                                        <div class="form-group">
+                                                            <label for="projectinput1"> العنوان </label>
+                                                            <input type="text" id="pac-input" class="form-control"
+                                                                placeholder="  " name="address">
+
+                                                            @error('address')
+                                                                <span class="text-danger"> {{ $message }}</span>
+                                                            @enderror
                                                         </div>
                                                     </div>
 
-                                                    <div class="row">
-                                                        <div class="col-md-6 ">
-                                                            <div class="form-group">
-                                                                <label for="projectinput1"> العنوان </label>
-                                                                <input type="text" id="pac-input"
-                                                                       class="form-control"
-                                                                       placeholder="  "
-                                                                       name="address">
-
-                                                                @error("address")
-                                                                <span class="text-danger">{{$message}}</span>
-                                                                @enderror
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
+                                                </di>
+                                                <div class="row">
                                                     <div class="col-md-6">
                                                         <div class="form-group mt-1">
-                                                            <input type="checkbox" value="1"
-                                                                   name="active"
-                                                                   id="switcheryColor4"
-                                                                   class="switchery" data-color="success"
-                                                                   checked/>
-                                                            <label for="switcheryColor4"
-                                                                   class="card-title ml-1">الحالة</label>
+                                                            <input type="checkbox" value="1" name="active"
+                                                                id="switcheryColor4" class="switchery"
+                                                                data-color="success" checked />
+                                                            <label for="switcheryColor4" class="card-title ml-1">الحالة
+                                                            </label>
 
-                                                            @error("active")
-                                                            <span class="text-danger"> {{$message}}</span>
+                                                            @error('active')
+                                                                <span class="text-danger"> </span>
                                                             @enderror
                                                         </div>
                                                     </div>
                                                 </div>
+
                                             </div>
+
 
                                             <div id="map" style="height: 500px;width: 1000px;"></div>
 
                                             <div class="form-actions">
                                                 <button type="button" class="btn btn-warning mr-1"
-                                                        onclick="history.back();">
+                                                    onclick="history.back();">
                                                     <i class="ft-x"></i> تراجع
                                                 </button>
                                                 <button type="submit" class="btn btn-primary">
@@ -201,12 +198,11 @@
 
 @endsection
 
+
 @section('script')
 
     <script>
-
-
-        $("#pac-input").focusin(function () {
+        $("#pac-input").focusin(function() {
             $(this).val('');
         });
 
@@ -224,7 +220,10 @@
 
         function initAutocomplete() {
             var map = new google.maps.Map(document.getElementById('map'), {
-                center: {lat: 24.740691, lng: 46.6528521},
+                center: {
+                    lat: 24.740691,
+                    lng: 46.6528521
+                },
                 zoom: 13,
                 mapTypeId: 'roadmap'
             });
@@ -233,7 +232,7 @@
             infoWindow = new google.maps.InfoWindow;
             geocoder = new google.maps.Geocoder();
             if (navigator.geolocation) {
-                navigator.geolocation.getCurrentPosition(function (position) {
+                navigator.geolocation.getCurrentPosition(function(position) {
                     var pos = {
                         lat: position.coords.latitude,
                         lng: position.coords.longitude
@@ -245,12 +244,12 @@
                         title: 'موقعك الحالي'
                     });
                     markers.push(marker);
-                    marker.addListener('click', function () {
+                    marker.addListener('click', function() {
                         geocodeLatLng(geocoder, map, infoWindow, marker);
                     });
                     // to get current position address on load
                     google.maps.event.trigger(marker, 'click');
-                }, function () {
+                }, function() {
                     handleLocationError(true, infoWindow, map.getCenter());
                 });
             } else {
@@ -260,11 +259,11 @@
             }
 
             var geocoder = new google.maps.Geocoder();
-            google.maps.event.addListener(map, 'click', function (event) {
+            google.maps.event.addListener(map, 'click', function(event) {
                 SelectedLatLng = event.latLng;
                 geocoder.geocode({
                     'latLng': event.latLng
-                }, function (results, status) {
+                }, function(results, status) {
                     if (status == google.maps.GeocoderStatus.OK) {
                         if (results[0]) {
                             deleteMarkers();
@@ -279,12 +278,17 @@
             });
 
             function geocodeLatLng(geocoder, map, infowindow, markerCurrent) {
-                var latlng = {lat: markerCurrent.position.lat(), lng: markerCurrent.position.lng()};
+                var latlng = {
+                    lat: markerCurrent.position.lat(),
+                    lng: markerCurrent.position.lng()
+                };
                 /* $('#branch-latLng').val("("+markerCurrent.position.lat() +","+markerCurrent.position.lng()+")");*/
                 $('#latitude').val(markerCurrent.position.lat());
                 $('#longitude').val(markerCurrent.position.lng());
 
-                geocoder.geocode({'location': latlng}, function (results, status) {
+                geocoder.geocode({
+                    'location': latlng
+                }, function(results, status) {
                     if (status === 'OK') {
                         if (results[0]) {
                             map.setZoom(8);
@@ -338,14 +342,14 @@
             map.controls[google.maps.ControlPosition.TOP_RIGHT].push(input);
 
             // Bias the SearchBox results towards current map's viewport.
-            map.addListener('bounds_changed', function () {
+            map.addListener('bounds_changed', function() {
                 searchBox.setBounds(map.getBounds());
             });
 
             var markers = [];
             // Listen for the event fired when the user selects a prediction and retrieve
             // more details for that place.
-            searchBox.addListener('places_changed', function () {
+            searchBox.addListener('places_changed', function() {
                 var places = searchBox.getPlaces();
 
                 if (places.length == 0) {
@@ -353,14 +357,14 @@
                 }
 
                 // Clear out the old markers.
-                markers.forEach(function (marker) {
+                markers.forEach(function(marker) {
                     marker.setMap(null);
                 });
                 markers = [];
 
                 // For each place, get the icon, name and location.
                 var bounds = new google.maps.LatLngBounds();
-                places.forEach(function (place) {
+                places.forEach(function(place) {
                     if (!place.geometry) {
                         console.log("Returned place contains no geometry");
                         return;
@@ -414,8 +418,7 @@
             $("#latitude").val(lat);
             $("#longitude").val(Lng);
         }
-
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCVdwN8rdE--r2r52ud84i6lRDBTMw47K8&libraries=places&callback=initAutocomplete&language=ar&region=EG
-         async defer"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKZAuxH9xTzD2DLY2nKSPKrgRi2_y0ejs&libraries=places&callback=initAutocomplete&language=ar&region=EG
+                         async defer"></script>
 @stop

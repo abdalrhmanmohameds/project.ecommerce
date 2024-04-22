@@ -1,3 +1,4 @@
+
 @extends('layouts.admin')
 
 @section('content')
@@ -11,7 +12,7 @@
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{route('admin.dashboard')}}">الرئيسية</a>
                                 </li>
-                                <li class="breadcrumb-item active"> المتاجر
+                                <li class="breadcrumb-item active"> ألمتاجر
                                 </li>
                             </ol>
                         </div>
@@ -51,7 +52,7 @@
                                                 <th> اللوجو</th>
                                                 <th>الهاتف</th>
                                                 <th>القسم الرئيسي</th>
-                                                <th> الحالة </th>
+                                                <th> ألحالة </th>
                                                 <th>الإجراءات</th>
                                             </tr>
                                             </thead>
@@ -71,7 +72,7 @@
                                                         <td>
                                                             <div class="btn-group" role="group"
                                                                  aria-label="Basic example">
-                                                                <a href="{{route('admin.Vendors.edit', $vendor -> id)}}"
+                                                                <a href="{{route('admin.Vendors.edit',$vendor -> id)}}"
                                                                    class="btn btn-outline-primary btn-min-width box-shadow-3 mr-1 mb-1">تعديل</a>
 
 

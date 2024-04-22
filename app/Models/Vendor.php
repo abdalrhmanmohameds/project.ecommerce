@@ -11,7 +11,7 @@ class Vendor extends Model
     use Notifiable;
     protected $table = 'vendors';
     protected $fillable = [
-        'name', 'mobile','password', 'address', 'email', 'logo', 'category_id', 'active', 'created_at', 'updated_at'
+        'name', 'mobile','password', 'address', 'email', 'logo', 'category_id', 'active','latitude','longitude', 'created_at', 'updated_at'
     ];
 
     protected $hidden = ['category_id', 'password'];
@@ -23,7 +23,7 @@ class Vendor extends Model
     }
 
 
-    public function getPhotoAttribute($val)
+    public function getLogoAttribute($val)
     {
         return ($val !== null) ? asset('assets/' . $val) : "";
     }
@@ -32,7 +32,7 @@ class Vendor extends Model
     public function scopeSelection($query)
     {
 
-        $query->select('id', 'category_id','password', 'active','address','email', 'name', 'logo', 'mobile');
+        $query->select('id', 'category_id','password', 'active','latitude','longitude','address','email', 'name', 'logo', 'mobile');
     }
 
     public function category()
